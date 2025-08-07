@@ -678,13 +678,27 @@
             }
         }
         
-        /* FINAL OVERRIDE - Force header styles */
-        .projects-section h2, 
-        .education-section h2, 
-        .contact-section h2 {
-            font-size: 20px !important;
+        /* NUCLEAR OPTION - Maximum specificity override */
+        .content-section .projects-section h2,
+        .content-section .education-section h2, 
+        .content-section .contact-section h2 {
+            font-size: 18px !important;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
             font-weight: 300 !important;
+        }
+        
+        /* Additional backup selectors */
+        div.projects-section h2,
+        div.education-section h2,
+        div.contact-section h2 {
+            font-size: 18px !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+        }
+        
+        /* Last resort - target all h2s in content sections */
+        section h2, .content-section h2 {
+            font-size: 18px !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
         }
         
     </style>
