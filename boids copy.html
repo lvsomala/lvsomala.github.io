@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venkat Somala</title>
-    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8IS0tIENlbnRlcmVkIGFuZCBsYXJnZXIgZGlhZ29uYWwgYm9pZCBwb2ludGluZyBsZWZ0IC0tPgogIDxwb2x5Z29uIHBvaW50cz0iNiw4IDI0LDE2IDYsMjQgMTQsMjAgNiwyNiAxNCwyMiIgZmlsbD0iI0RDMTQ0QyIgc3Ryb2tlPSIjQTkyMTIzIiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+Cg==" type="image/svg+xml">
+    <title>Swarm Intelligence - Venkat Somala</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Soria:wght@300;400;500;600;700&display=swap');
         
         * {
             margin: 0;
@@ -238,9 +238,6 @@
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow: hidden;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }
 
 .project-card::before {
@@ -288,14 +285,6 @@
 
 .project-content {
     padding: 30px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.project-bottom {
-    margin-top: auto;
-    padding-top: 20px;
 }
 
 .project-card h3 {
@@ -351,10 +340,9 @@
     color: white;
     text-decoration: none;
     font-weight: 600;
-    font-size: 12px;
-    padding: 10px 20px;
+    font-size: 14px;
+    padding: 12px 24px;
     border-radius: 8px;
-    margin-top: 10px;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -439,33 +427,11 @@
             margin-bottom: 60px;
             text-align: center;
             letter-spacing: 1.5px;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .education-section {
-            background: #ffffff;
-            padding: 100px 0;
-            color: #1a202c;
-            border-top: 1px solid #e5e7eb;
+            font-family: 'Soria', sans-serif;
         }
         
         .education-section h2 {
-            color: #1a202c;
-        }
-        
-        .degree-subtitle {
-            font-size: 1.1rem;
-            color: #6b7280;
-            font-weight: 400;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .graduation {
-            font-size: 1.1rem;
-            color: #9ca3af;
-            font-weight: 400;
-            font-family: 'Inter', sans-serif;
-            text-align: right;
+            color: #ffffff;
         }
         
         .portfolio-section h2, .interests-section h2 {
@@ -473,87 +439,68 @@
         }
         
         .education-content {
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
-        .education-text {
-            width: 100%;
-        }
-        
-        .education-image {
-            width: 100%;
-        }
-        
-        .education-image img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .degree-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 30px;
-        }
-        
-        .degree-left {
-            flex: 1;
+        .degree-card, .capstone-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
         
         .degree-info h3 {
             font-size: 2rem;
-            font-weight: 500;
-            color: #1a202c;
-            margin-bottom: 8px;
-            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-family: 'Soria', sans-serif;
         }
         
         .degree-info h4 {
-            font-size: 2rem;
-            font-weight: 300;
-            color: #4a5568;
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Soria', sans-serif;
         }
         
         .minors {
-            font-size: 1.4rem;
-            color: #6b7280;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
             font-weight: 300;
-            font-family: 'Inter', sans-serif;
-            margin-bottom: 15px;
+            font-family: 'Soria', sans-serif;
         }
         
         .capstone h4 {
-            font-size: 1.8rem;
+            font-size: 1.25rem;
             font-weight: 400;
-            color: #1a202c;
+            color: #ffffff;
             margin-bottom: 20px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Soria', sans-serif;
         }
         
         .capstone p {
-            font-size: 1.1rem;
-            color: #4a5568;
-            line-height: 1.8;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
             margin-bottom: 16px;
             font-weight: 300;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Soria', sans-serif;
         }
         
         .findings {
             font-style: italic;
-            color: #1a202c;
-            font-weight: 400;
-            font-size: 1.1rem;
-            font-family: 'Inter', sans-serif;
+            opacity: 0.9;
+            font-size: 0.95rem;
+            font-family: 'Soria', sans-serif;
         }
         
         .portfolio-grid {
@@ -584,7 +531,7 @@
             color: #1a202c;
             margin-bottom: 16px;
             letter-spacing: 0.5px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Soria', sans-serif;
         }
         
         .project p {
@@ -592,7 +539,7 @@
             color: #4a5568;
             line-height: 1.6;
             font-weight: 400;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Soria', sans-serif;
         }
         
         .interests-content {
@@ -626,7 +573,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Soria', sans-serif;
         }
         
         .interest-category p {
@@ -635,7 +582,7 @@
             line-height: 1.6;
             margin-bottom: 12px;
             font-weight: 400;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Soria', sans-serif;
         }
         
         .interest-icon {
@@ -657,7 +604,7 @@
             }
             
             .education-content {
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 gap: 32px;
             }
             
@@ -670,12 +617,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .degree-info h3 {
-                font-size: 2rem;
-            }
-            
-            .degree-info h4 {
-                font-size: 1.5rem;
+            .degree-card, .capstone-card {
+                padding: 24px;
             }
             
             .project {
@@ -730,7 +673,6 @@
             <a href="#" class="site-title">VENKAT SOMALA</a>
             <nav class="nav-menu">
                 <a href="#projects">Projects</a>
-                <a href="#education">Education</a>
                 <a href="#contact">Contact</a>
             </nav>
         </header>
@@ -745,14 +687,13 @@
                     <div class="project-content">
                         <h3>Modeling Airbnb Prices</h3>
                         <p>Predicting Airbnb Prices Using Machine Learning. Built predictive models using KNN and Lasso algorithms to estimate property prices based on features and location.</p>
-                        <div class="project-bottom">
-                            <div class="tech-stack">
-                                <span class="tech">KNN</span>
-                                <span class="tech">Lasso</span>
-                                <span class="tech">Scikit-learn</span>
-                            </div>
-                            <a href="https://vsomala.github.io/Predicting-Airbnb-Prices/" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">KNN</span>
+                            <span class="tech">Lasso</span>
+                            <span class="tech">Scikit-learn</span>
                         </div>
+                        <a href="https://vsomala.github.io/Predicting-Airbnb-Prices/" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
                     </div>
                 </div>
                 
@@ -763,14 +704,13 @@
                     <div class="project-content">
                         <h3>Predicting Spotify Song Genre</h3>
                         <p>Can we predict a song's genre based on its acoustic properties and the year it was made? Using machine learning to classify music genres.</p>
-                        <div class="project-bottom">
-                            <div class="tech-stack">
-                                <span class="tech">Classification</span>
-                                <span class="tech">Audio Analysis</span>
-                                <span class="tech">Spotify API</span>
-                            </div>
-                            <a href="https://vsomala.github.io/Predicting-Spotify-Song-Genre/" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">Classification</span>
+                            <span class="tech">Audio Analysis</span>
+                            <span class="tech">Spotify API</span>
                         </div>
+                        <a href="https://vsomala.github.io/Predicting-Spotify-Song-Genre/" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
                     </div>
                 </div>
                 
@@ -781,14 +721,13 @@
                     <div class="project-content">
                         <h3>Predicting Spotify Song Popularity</h3>
                         <p>What makes a song popular? Analyzing 10,000 songs to predict popularity based only on acoustic properties and music features.</p>
-                        <div class="project-bottom">
-                            <div class="tech-stack">
-                                <span class="tech">Regression</span>
-                                <span class="tech">Feature Engineering</span>
-                                <span class="tech">Data Viz</span>
-                            </div>
-                            <a href="https://vsomala.github.io/Predicting-Spotify-Song-Popularity/" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">Regression</span>
+                            <span class="tech">Feature Engineering</span>
+                            <span class="tech">Data Viz</span>
                         </div>
+                        <a href="https://vsomala.github.io/Predicting-Spotify-Song-Popularity/" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
                     </div>
                 </div>
                 
@@ -799,14 +738,13 @@
                     <div class="project-content">
                         <h3>Flagging Fake News</h3>
                         <p>Built an algorithm that automatically flags incoming news stories as 'fake' or 'real' using natural language processing and sentiment analysis.</p>
-                        <div class="project-bottom">
-                            <div class="tech-stack">
-                                <span class="tech">NLP</span>
-                                <span class="tech">Sentiment Analysis</span>
-                                <span class="tech">LASSO</span>
-                            </div>
-                            <a href="https://vsomala.github.io/Flagging-Fake-News/" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">NLP</span>
+                            <span class="tech">Sentiment Analysis</span>
+                            <span class="tech">LASSO</span>
                         </div>
+                        <a href="https://vsomala.github.io/Flagging-Fake-News/" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
                     </div>
                 </div>
                 
@@ -817,51 +755,25 @@
                     <div class="project-content">
                         <h3>Clustering Candies</h3>
                         <p>Using Machine Learning Algorithms to Cluster Similar Candies based on their nutritional properties and consumer preferences.</p>
-                        <div class="project-bottom">
-                            <div class="tech-stack">
-                                <span class="tech">K-Means</span>
-                                <span class="tech">Clustering</span>
-                                <span class="tech">Data Viz</span>
-                            </div>
-                            <a href="https://vsomala.github.io/Clustering-Candies/" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">K-Means</span>
+                            <span class="tech">Clustering</span>
+                            <span class="tech">Data Viz</span>
                         </div>
+                        <a href="https://vsomala.github.io/Clustering-Candies/" target="_blank" rel="noopener noreferrer" class="project-link">View Project</a>
                     </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="education-section" id="education">
-            <h2>Education</h2>
-            <div class="education-content">
-                <div class="education-text">
-                    <div class="degree-info">
-                        <div class="degree-header">
-                            <div class="degree-left">
-                                <h3>Macalester College</h3>
-                                <div class="degree-subtitle">Economics w/ Minors in Statistics and Philosophy</div>
-                            </div>
-                            <div class="graduation">2016 - 2020</div>
-                        </div>
-                    </div>
-                    
-                    <div class="capstone">
-                        <h4>Capstone Research</h4>
-                        <p>Studied macroeconomic impacts of New Member States joining the EU in the 2000s, focusing on export dependence, industry specialization, and Global Value Chain participation. Found that New Member States became more export-dependent on EU markets and shifted towards labor-intensive industries, increasing their vulnerability to global economic shocks.</p>
-                    </div>
-                </div>
-                
-                <div class="education-image">
-                    <img src="https://www.macalester.edu/wp-content/uploads/2020/02/admissions-admitted-hero-e1648069978971.jpg" alt="Macalester College" loading="lazy">
                 </div>
             </div>
         </div>
         
         <div class="contact-section">
             <h2>Contact</h2>
-            <p>Feel free to get in touch to chat!</p>
+            <p>Get in touch for collaboration opportunities or questions about my work.</p>
             <div class="contact-links">
-                <a href="mailto:lvsomala@gmail.com.">Email</a>
-                <a href="https://www.linkedin.com/in/lakshmi-venkat-somala-135278105/" target="_blank">LinkedIn</a>
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
             </div>
         </div>
     </div>
@@ -1411,7 +1323,7 @@
         class SwarmSystem {
             constructor() {
                 this.boids = [];
-                this.boidCount = 220;
+                this.boidCount = 150;
                 this.paused = false;
                 this.showTrails = false;
                 
