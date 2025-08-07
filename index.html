@@ -211,13 +211,13 @@
     padding: 60px 0;
 }
 
-.projects-section h2, .contact-section h2 {
-    font-size: 18px;
+.projects-section h2, .contact-section h2, .education-section h2 {
+    font-size: 18px !important;
     font-weight: 200;
     margin-bottom: 40px;
     color: black;
     text-align: center;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif !important;
     letter-spacing: 1.5px;
     /* Updated font weight to 200 for even lighter appearance */
 }
@@ -433,14 +433,7 @@
     }
 }
         
-        .content-section h2 {
-            font-size: 1.5rem;
-            font-weight: 200;
-            margin-bottom: 60px;
-            text-align: center;
-            letter-spacing: 1.5px;
-            font-family: 'Inter', sans-serif;
-        }
+        /* Removed generic .content-section h2 rule - using specific section rules instead */
         
         .education-section {
             background: #ffffff;
@@ -449,11 +442,7 @@
             border-top: 1px solid #e5e7eb;
         }
         
-        .education-section h2 {
-            color: #1a202c;
-            font-size: 18px;
-            font-family: 'Inter', sans-serif;
-        }
+        /* Education section h2 styling handled by combined rule above */
         
         .degree-subtitle {
             font-size: 1.1rem;
@@ -654,7 +643,7 @@
             }
             
             .content-section h2 {
-                font-size: 2.5rem;
+                font-size: 1.2rem;
                 margin-bottom: 40px;
             }
             
