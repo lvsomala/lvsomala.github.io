@@ -39,7 +39,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: white;
             color: #2c3e50;
             font-family: 'Press Start 2P', monospace;
             margin: 0;
@@ -51,6 +51,7 @@
             width: 100vw;
             height: 100vh;
             overflow: hidden;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
         }
         
         #canvas {
@@ -1180,6 +1181,58 @@
             }
         }
         
+        class SpatialGrid {
+            constructor(width, height, cellSize) {
+                this.cellSize = cellSize;
+                this.cols = Math.ceil(width / cellSize);
+                this.rows = Math.ceil(height / cellSize);
+                this.grid = [];
+                this.clear();
+            }
+            
+            clear() {
+                this.grid = [];
+                for (let i = 0; i < this.cols * this.rows; i++) {
+                    this.grid[i] = [];
+                }
+            }
+            
+            addBoid(boid) {
+                const col = Math.floor(boid.position.x / this.cellSize);
+                const row = Math.floor(boid.position.y / this.cellSize);
+                const index = this.getIndex(col, row);
+                if (index >= 0 && index < this.grid.length) {
+                    this.grid[index].push(boid);
+                }
+            }
+            
+            getIndex(col, row) {
+                if (col < 0 || col >= this.cols || row < 0 || row >= this.rows) {
+                    return -1;
+                }
+                return row * this.cols + col;
+            }
+            
+            getNearbyBoids(position, radius) {
+                const nearby = [];
+                const minCol = Math.max(0, Math.floor((position.x - radius) / this.cellSize));
+                const maxCol = Math.min(this.cols - 1, Math.floor((position.x + radius) / this.cellSize));
+                const minRow = Math.max(0, Math.floor((position.y - radius) / this.cellSize));
+                const maxRow = Math.min(this.rows - 1, Math.floor((position.y + radius) / this.cellSize));
+                
+                for (let col = minCol; col <= maxCol; col++) {
+                    for (let row = minRow; row <= maxRow; row++) {
+                        const index = this.getIndex(col, row);
+                        if (index >= 0) {
+                            nearby.push(...this.grid[index]);
+                        }
+                    }
+                }
+                
+                return nearby;
+            }
+        }
+        
         class Boid {
             constructor(x, y) {
                 this.position = new Vector2(x, y);
@@ -1207,7 +1260,7 @@
                 this.hue = hue;
                 
                 this.trail = [];
-                this.trailLength = 8;
+                this.trailLength = 4; // Reduced from 8 for better performance
                 
             }
             
@@ -1239,10 +1292,13 @@
                 if (this.position.y > canvas.height) this.position.y = 0;
             }
             
-            flock(boids) {
-                const sep = this.separate(boids);
-                const ali = this.align(boids);
-                const coh = this.cohesion(boids);
+            flock(boids, spatialGrid) {
+                // Use spatial grid for efficient neighbor finding
+                const neighbors = spatialGrid.getNearbyBoids(this.position, 60);
+                
+                const sep = this.separate(neighbors);
+                const ali = this.align(neighbors);
+                const coh = this.cohesion(neighbors);
                 
                 // Apply weights
                 sep.mult(swarm.separationWeight);
@@ -1458,6 +1514,9 @@
                 this.cohesionWeight = 2.5;
                 this.speedMultiplier = 1.0;
                 
+                // Spatial grid for performance optimization
+                this.spatialGrid = null;
+                
                 // Letter animation
                 this.letters = [];
                 this.initializeLetters();
@@ -1475,6 +1534,12 @@
             
             initializeBoids() {
                 this.boids = []; // Clear existing boids
+                
+                // Initialize spatial grid for performance optimization
+                if (canvas.width > 0 && canvas.height > 0) {
+                    this.spatialGrid = new SpatialGrid(canvas.width, canvas.height, 80);
+                }
+                
                 const totalDuration = 3000; // 3 seconds for all boids to enter
                 const buffer = 50;
 
@@ -1588,8 +1653,16 @@
             update() {
                 if (this.paused) return;
                 
+                // Clear and populate spatial grid
+                if (this.spatialGrid) {
+                    this.spatialGrid.clear();
+                    for (const boid of this.boids) {
+                        this.spatialGrid.addBoid(boid);
+                    }
+                }
+                
                 for (const boid of this.boids) {
-                    boid.flock(this.boids);
+                    boid.flock(this.boids, this.spatialGrid);
                     boid.avoidBarriers(this.barriers);
                     boid.update();
                 }
@@ -1731,6 +1804,11 @@
         const ctx = canvas.getContext('2d');
         let swarm = null;
         
+        // Performance monitoring
+        let frameCount = 0;
+        let lastTime = performance.now();
+        let fps = 60;
+        
         function resize() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -1752,10 +1830,28 @@
             swarm.initializeBoids();
         }, 100);
         
-        // Animation loop
+        // Animation loop with performance monitoring
         function animate() {
+            const currentTime = performance.now();
+            const deltaTime = currentTime - lastTime;
+            
+            // Calculate FPS
+            frameCount++;
+            if (frameCount >= 60) {
+                fps = Math.round(1000 / (deltaTime / frameCount));
+                frameCount = 0;
+            }
+            lastTime = currentTime;
+            
             swarm.update();
             swarm.draw(ctx);
+            
+            // Draw performance info
+            ctx.fillStyle = '#34495e';
+            ctx.font = '8px "Press Start 2P", monospace';
+            ctx.fillText(`FPS: ${fps}`, 10, canvas.height - 20);
+            ctx.fillText(`Boids: ${swarm.boids.length}`, 10, canvas.height - 35);
+            
             requestAnimationFrame(animate);
         }
         
