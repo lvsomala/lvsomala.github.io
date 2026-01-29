@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucy Nguyen - Operations Manager, Law Programs</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>L</text></svg>">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lucy Nguyen - Operations Manager, Law Programs">
+    <meta property="og:description" content="Operations Manager for Law Programs at SEO (Sponsors for Educational Opportunity). Public sector professional passionate about data-driven program implementation.">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Lucy Nguyen - Operations Manager, Law Programs">
+    <meta name="twitter:description" content="Operations Manager for Law Programs at SEO (Sponsors for Educational Opportunity). Public sector professional passionate about data-driven program implementation.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3a5f;
+            --primary-light: #2d5a87;
+            --accent-color: #c9a227;
+            --text-dark: #1a202c;
+            --text-medium: #4a5568;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--bg-white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            padding: 100px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color), #d4af37);
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .hero .tagline {
+            font-size: 1.4rem;
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 8px;
+        }
+
+        .hero .organization {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 20px;
+        }
+
+        .hero .organization a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .hero .organization a:hover {
+            text-decoration: underline;
+        }
+
+        .hero .subtitle {
+            font-size: 1.05rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .hero .location {
+            margin-top: 16px;
+            font-size: 0.95rem;
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-white);
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 48px;
+            color: var(--text-dark);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-highlights {
+            display: grid;
+            gap: 20px;
+        }
+
+        .highlight-card {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .highlight-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .highlight-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: var(--bg-white);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 32px;
+            border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .skill-category h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 10px 0;
+            color: var(--text-medium);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: var(--bg-light);
+        }
+
+        .experience-timeline {
+            position: relative;
+        }
+
+        .experience-item {
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .experience-item .company {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .experience-item .location-line {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .experience-item .date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+        }
+
+        .experience-item li {
+            padding: 8px 0;
+            color: var(--text-medium);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .experience-item li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        /* Education Section */
+        .education {
+            background: var(--bg-white);
+        }
+
+        .education-item {
+            background: var(--bg-light);
+            padding: 32px;
+            border-radius: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .education-item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .education-item p {
+            color: var(--text-medium);
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .contact-text {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.2s ease;
+            background: var(--bg-white);
+        }
+
+        .contact-link:hover {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .contact-link svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-avatar">LN</div>
+            <h1>Lucy Nguyen</h1>
+            <p class="tagline">Operations Manager, Law Programs</p>
+            <p class="organization">
+                <a href="https://www.seo-usa.org/" target="_blank" rel="noopener noreferrer">SEO (Sponsors for Educational Opportunity)</a>
+            </p>
+            <p class="subtitle">
+                Public sector professional passionate about data-driven program implementation,
+                event management, and creating opportunities for underrepresented communities.
+            </p>
+            <p class="location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                New York, NY
+            </p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Lucy Nguyen</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm an Operations Manager at SEO (Sponsors for Educational Opportunity),
+                        where I support the Law Programs that help underrepresented students
+                        access educational and career opportunities in the legal field.
+                    </p>
+                    <p>
+                        With a background spanning nonprofit work, government, and higher education,
+                        I bring a data-driven approach to program implementation and a deep commitment
+                        to closing opportunity gaps for ambitious young people from underserved communities.
+                    </p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <h4>Program Operations</h4>
+                        <p>Managing law fellowship programs that place students at top law firms nationwide</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Event Management</h4>
+                        <p>Producing professional workshops, social mixers, and educational events</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Data-Driven Impact</h4>
+                        <p>Evaluating program effectiveness and building community partnerships</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <h3>Operations Manager, Law Programs</h3>
+                    <p class="company">SEO (Sponsors for Educational Opportunity)</p>
+                    <p class="location-line">New York, NY</p>
+                    <p class="date">September 2022 - Present</p>
+                    <ul>
+                        <li>Manage operations for SEO Law programs that provide fellowships, academic prep, and internship opportunities to underrepresented law students</li>
+                        <li>Support events with internal teams to produce professional workshops, social mixers, and educational programming</li>
+                        <li>Manage budgets and evaluate effectiveness of events and program initiatives</li>
+                        <li>Research and develop partnerships with community organizations to enhance program offerings</li>
+                        <li>Coordinate with 41+ partner law firms across 12 cities for the SEO Law Fellowship program</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Operations and Administrative Coordinator, Law Programs</h3>
+                    <p class="company">SEO (Sponsors for Educational Opportunity)</p>
+                    <p class="location-line">New York, NY</p>
+                    <p class="date">2021 - 2022</p>
+                    <ul>
+                        <li>Provided administrative support for Law Programs operations and events</li>
+                        <li>Coordinated logistics for the SEO Law Fellowship and Institute programs</li>
+                        <li>Assisted with communications to fellows, alumni, and partner organizations</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>LPRO Committee Assistant</h3>
+                    <p class="company">State of Oregon - Legislative Policy and Research Office</p>
+                    <p class="location-line">Salem, OR</p>
+                    <p class="date">2021</p>
+                    <ul>
+                        <li>Supported legislative policy research and committee operations</li>
+                        <li>Assisted with administrative functions for state legislative processes</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Volunteer Coordinator (AmeriCorps VISTA)</h3>
+                    <p class="company">People Assisting The Homeless (PATH)</p>
+                    <p class="location-line">Los Angeles, CA</p>
+                    <p class="date">2019 - 2020</p>
+                    <ul>
+                        <li>Coordinated volunteer programs to support homeless services and outreach</li>
+                        <li>Managed volunteer recruitment, training, and scheduling</li>
+                        <li>Served as AmeriCorps VISTA member focused on capacity building</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Social Media and Promotions Coordinator</h3>
+                    <p class="company">University of Oregon - Student Activities Board</p>
+                    <p class="location-line">Eugene, OR</p>
+                    <p class="date">2018 - 2019</p>
+                    <ul>
+                        <li>Managed social media strategy and content for student programming board</li>
+                        <li>Promoted campus events and increased student engagement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        Program Management
+                    </h3>
+                    <ul>
+                        <li>Program Operations & Logistics</li>
+                        <li>Event Planning & Production</li>
+                        <li>Budget Management</li>
+                        <li>Process Improvement</li>
+                        <li>Vendor & Partner Relations</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        Community Building
+                    </h3>
+                    <ul>
+                        <li>Stakeholder Engagement</li>
+                        <li>Partnership Development</li>
+                        <li>Volunteer Coordination</li>
+                        <li>Cross-functional Collaboration</li>
+                        <li>Alumni Relations</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        Data & Communications
+                    </h3>
+                    <ul>
+                        <li>Data-Driven Decision Making</li>
+                        <li>Program Evaluation</li>
+                        <li>Social Media Management</li>
+                        <li>Content Creation</li>
+                        <li>Reporting & Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <h3>University of Oregon</h3>
+                <p>Eugene, Oregon</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-text">
+                I'm always interested in connecting with fellow professionals working in
+                education, nonprofit, and public sector spaces. Feel free to reach out!
+            </p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/lucy-nguyen-452201157/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    LinkedIn
+                </a>
+                <a href="https://www.seo-usa.org/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    SEO Website
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Lucy Nguyen. All rights reserved.</p>
+    </footer>
+</body>
+</html>
